@@ -14,7 +14,8 @@ const Navbar = () =>{
                     <p className=" text-zinc-700 text-sm font-medium md-block">Breaddit</p>
 
                 </Link>
-                
+
+                    
                 {/* sign in*/}
                 <Link href="/sign-in" className={buttonVariants()}>Sign in</Link>
 
