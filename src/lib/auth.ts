@@ -4,6 +4,7 @@ import { nanoid } from 'nanoid'
 import { NextAuthOptions, getServerSession } from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
 
+//implementation of NextAuthOptions to create a server session
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(db),
   session: {
@@ -19,6 +20,8 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   callbacks: {
+    
+    //session parameters
     async session({ token, session }) {
       if (token) {
         session.user.id = token.id
